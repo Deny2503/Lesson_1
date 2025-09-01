@@ -1,0 +1,16 @@
+﻿@page
+@model Lesson_1.Pages.Lesson1.Task3Model
+@{
+	ViewData["Title"] = "Task3";
+}
+
+<form method="post">
+	<label for="celsius">Введіть температуру (°C):</label>
+	<input type="number" id="celsius" name="Celsius" step="any" required />
+	<button type="submit">Конвертувати</button>
+</form>
+
+@if (Model.Fahrenheit.HasValue)
+{
+	<h3>@Model.Celsius°C = @Model.Fahrenheit.Value.ToString("0.##")°F</h3>
+}

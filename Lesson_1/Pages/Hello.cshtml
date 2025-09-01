@@ -1,0 +1,19 @@
+﻿@page
+@model Lesson_1.Pages.HelloModel
+@{
+}
+
+<form method="post">
+	<input name="UserName" value="@Model.UserName" placeholder="UserName: " />
+	<button type="submit">Say hello!</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.CurrentTime))
+{
+	<p>@Model.CurrentTime</p>
+}
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+	<p>@Model.Message</p>
+}
