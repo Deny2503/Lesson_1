@@ -1,0 +1,20 @@
+﻿@page
+@model Lesson_1.Pages.Lesson2.Task3Model
+@{
+}
+
+<h2>Форма контакту</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name">Ім'я:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Відправити</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Greeting))
+{
+    <h3>@Model.Greeting</h3>
+}

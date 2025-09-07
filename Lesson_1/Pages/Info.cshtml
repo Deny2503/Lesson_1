@@ -1,0 +1,17 @@
+﻿@page
+@model Lesson_1.Pages.InfoModel
+@{
+}
+
+<form method="post">
+	<input type="text" asp-for="Name"/>
+	<button type="submit">Send</button>
+</form>
+<p>@ViewData["hello"]</p>
+<p>@ViewBag.world</p>
+
+
+@if(!string.IsNullOrEmpty(Model.Message))
+{
+	<p>@Model.Message</p>
+}

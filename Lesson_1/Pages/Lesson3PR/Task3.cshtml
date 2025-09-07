@@ -1,0 +1,23 @@
+﻿@page
+@model Lesson_1.Pages.Lesson3PR.Task3Model
+@{
+	ViewData["Title"] = "Підписка на новини";
+}
+
+<h2>Підписка на новини</h2>
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Subscribe</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

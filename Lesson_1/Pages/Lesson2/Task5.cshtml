@@ -1,0 +1,21 @@
+﻿@page
+@model Lesson_1.Pages.Lesson2.Task5Model
+@{
+}
+
+<h2>Залиште свій коментар</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Comment">Коментар:</label>
+        <textarea asp-for="Comment" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Відправити</button>
+</form>
+
+@if (ViewData["Comment"] != null)
+{
+    <h3 class="mt-3">Ваш коментар:</h3>
+    <p>@ViewData["Comment"]</p>
+}
