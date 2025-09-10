@@ -1,0 +1,35 @@
+﻿@page
+@model Lesson_1.Pages.Lesson4.UsersModel
+@{
+}
+
+<h2>Список користувачів</h2>
+
+<table id="usersTable" class="table">
+    <thead>
+        <tr>
+            <th>Ім’я</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            < tr >
+            < td > @user.Name </ td >
+            < td > @user.Email </ td >
+            </ tr >
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#usersTable').DataTable();
+        });
+    </script>
+}

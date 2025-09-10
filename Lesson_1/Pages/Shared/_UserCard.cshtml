@@ -1,0 +1,9 @@
+﻿@model Lesson_1.Models.User
+
+<div class="user-card border rounded p-3 shadow-sm d-flex align-items-center">
+    <img src="@Model.AvatarUrl" alt="Avatar" class="rounded-circle me-3" style="width:60px; height:60px; object-fit:cover;" />
+    <div>
+        <h5>@Model.Name</h5>
+        <p class="text-muted">@Model.Email</p>
+    </div>
+</div>

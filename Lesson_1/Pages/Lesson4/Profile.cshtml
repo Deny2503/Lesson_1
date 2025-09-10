@@ -1,0 +1,39 @@
+﻿@page
+@model Lesson_1.Pages.Lesson4.ProfileModel
+@{
+}
+
+
+<h2>Мій профіль</h2>
+
+<partial name="_UserCard" model="Model.CurrentUser" />
+
+@section Sidebar {
+    <partial name="_UserCard" model="Model.CurrentUser" />
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const avatar = document.querySelector(".user-card img");
+            avatar.addEventListener("click", () => {
+                alert("Ви натиснули на аватар!");
+            });
+        });
+    </script>
+}
+
+
+<h2>Мій профіль</h2>
+
+<p>Контент сторінки профілю...</p>
+
+@section HeadExtra {
+    <style>
+        .notifications { margin-bottom: 20px; }
+        .alert { padding: 10px; border-radius: 6px; margin-bottom: 8px; }
+        .alert-success { background: #d4edda; color: #155724; }
+        .alert-warning { background: #fff3cd; color: #856404; }
+        .alert-error   { background: #f8d7da; color: #721c24; }
+    </style>
+}

@@ -1,0 +1,13 @@
+﻿@model List<(string Type, string Message)>
+
+@if (Model != null && Model.Any())
+{
+    <div class="notifications">
+        @foreach (var note in Model)
+        {
+            <div class="alert alert-@note.Type">
+                @note.Message
+            </div>
+        }
+    </div>
+}

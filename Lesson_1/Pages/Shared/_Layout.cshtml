@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Lesson_1.styles.css" asp-append-version="true" />
+
+    @RenderSection("HeadExtra", required: false)
 </head>
 <body>
     <header>
@@ -36,11 +38,37 @@
         </main>
     </div>
 
+    <!-- Task 2 Lesson 4 -->
+
+    <div class="container d-flex">
+        <aside class="sidebar me-3">
+            @RenderSection("Sidebar", required: false)
+        </aside>
+
+        <main class="content flex-grow-1">
+            @RenderBody()
+        </main>
+    </div>
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - Lesson_1 - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
+
+    <!-- Task 4 Lesson 4 -->
+
+    <div class="container">
+        @{
+            var notifications = TempData["Notifications"] as List<(string Type, string Message)>;
+        }
+
+        <partial name="_Notification" model="notifications" />
+
+        <main>
+            @RenderBody()
+        </main>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
